@@ -7,6 +7,11 @@ module.exports = {
     async welcome(ctx) {
         // 查询所有文章数据
         let results = await model.getBlogs();
+        // 格式化时间
+        for(let i = 0;i < results.length;i++){
+          results[i].post_time = date.formatTime('yyyy-MM-dd hh:mm:ss',results[i].post_time)
+        }
+        
         ctx.body = {
           state: 'success',
           results

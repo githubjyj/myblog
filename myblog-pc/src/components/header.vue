@@ -3,7 +3,7 @@
     <div class="login-box">
     <header>
       <div class="content clearfix">
-				<a class="logo" href="">军临天下</a>
+				<a class="logo" href="https://github.com/githubjyj/myblog" target="blank">军临天下</a>
 				<nav>
 					<em></em>
 					<ul>
@@ -16,6 +16,7 @@
 				</nav>
 			</div>
     </header>
+    
         <!-- <div>{{name}}</div> -->
         <!-- <div v-if="!name"><a href="/login">登录</a> / <a href="/regist">注册</a></div> -->
     </div>
@@ -42,7 +43,8 @@ header .content {
   display: flex;
   justify-content:space-between;
   align-items: center;
-  padding:0 20px;
+  padding:0 50px;
+  font-weight: bold;
 }
 header .logo {
   display: block;
