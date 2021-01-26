@@ -8,6 +8,11 @@ import BlogDetail from '../views/blogDetail.vue'
 
 // 发表文章
 import PushArticle from '../views/PushArticle.vue'
+// 关于作者
+import About from '../views/About.vue'
+// 留言
+import Message from '../views/Message.vue'
+
 Vue.use(VueRouter)
 const routes = [
   // 主页面
@@ -28,6 +33,16 @@ const routes = [
     path: '/PushArticle',
     name: 'PushArticle',
     component: PushArticle
+  },
+  {
+    path: '/About',
+    name: 'About',
+    component: About
+  },
+  {
+    path: '/Message',
+    name: 'Message',
+    component: Message
   },
 ]
 const router = new VueRouter({

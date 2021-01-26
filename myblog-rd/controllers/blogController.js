@@ -36,7 +36,7 @@ module.exports = {
             blogInfo.comments.push({
               comm_id: obj.comm_id,
               comm_content: obj.comm_content,
-              comm_post_time: date.formatTime('yyyy-MM-dd hh:mm:ss',obj.comm_post_time),
+              comm_post_time:obj.comm_post_time?date.formatTime('yyyy-MM-dd hh:mm:ss',obj.comm_post_time):obj.comm_post_time,
               username: obj.username
             });
           }

@@ -3,23 +3,10 @@
     <div class="container">
       <div class="content">
         <div class="main">
-          <!-- <div class="list">
-            <article v-for="item in blogList" :key="item.blogId">
-              <h2>
-                <a href="" rel="bookmark">{{ item.title }}</a>
-              </h2>
-              <p class="description">在各个大活动中，经常会遇到红包雨的特效，那么红包雨具体是怎么实现的呢？<a href="" class="more" title="Read More"><span>➥</span>Read More</a></p>
-              <p class="date">
-                  <span>posted @</span>
-                  <time pubdate="2021-01-18">{{item.post_time}}</time>
-                  <span class="comment">评论(0)</span> 
-              </p>
-            </article>
-          </div> -->
           <div class="list">
                     <article v-for="item in blogList" :key="item.blogId">
-                        <h2><a href="" rel="bookmark">{{ item.title }}</a></h2>
-                        <p class="description">在各个大活动中，经常会遇到红包雨的特效，那么红包雨具体是怎么实现的呢？<a href="" class="more" title="Read More"><span>➥</span>Read More</a></p>
+                        <h2><router-link :to="{ path: '/blog/detail/' + item.blog_id }">{{ item.title }}</router-link></h2> 
+                        <p class="description">在各个大活动中，经常会遇到红包雨的特效，那么红包雨具体是怎么实现的呢？<router-link :to="{ path: '/blog/detail/' + item.blog_id }"><span>➥</span>{{ item.title }}</router-link></p>
                         <p class="date">
                             <span>posted @</span>
                             <time pubdate="2021-01-18">{{item.post_time}}</time>

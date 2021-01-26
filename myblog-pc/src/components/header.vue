@@ -7,18 +7,13 @@
 				<nav>
 					<em></em>
 					<ul>
-						<li><a title="首页" href="">首页</a></li>
-						<li><a title="归档" href="#">归档</a></li>
-						<li><a title="标签" href="#">标签</a></li>
-						<li><a title="关于" href="#">关于</a></li>
-						<li><a title="留言" href="#">留言</a></li>
+						<li><a title="首页" href="/">首页</a></li>
+						<li><a title="关于" href="/About">关于</a></li>
+						<li><a title="留言" href="/Message">留言</a></li>
 					</ul>
 				</nav>
 			</div>
     </header>
-    
-        <!-- <div>{{name}}</div> -->
-        <!-- <div v-if="!name"><a href="/login">登录</a> / <a href="/regist">注册</a></div> -->
     </div>
 </template>
 
@@ -26,9 +21,11 @@
 import { mapState } from 'vuex'
 export default {
     name:"CommonHeader",
+
     computed: {
         ...mapState(['name'])
-    }
+    },
+
 }
 </script>
 
@@ -86,5 +83,44 @@ header ul li a:hover:before {
   visibility: visible;
   transform: scaleX(1);
 }
+
+@media screen and (max-width: 462px) {
+  .detail h1 {
+    font-size: 24px;
+  }
+  nav em {
+    display: block;
+    cursor: pointer;
+  }
+  /* nav em:after {
+    
+    font-size: 1.5em;
+    margin-top: 10px;
+    display: block;
+  } */
+   nav ul {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    left: 0;
+    background-color: #2c3e50;
+  }
+  nav ul li {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  nav ul li a {
+    color: #fff;
+  }
+  nav ul li a:hover {
+    background: none;
+  }
+  .wechat_pub img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
 
 </style>
