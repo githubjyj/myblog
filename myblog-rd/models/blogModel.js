@@ -4,6 +4,7 @@ module.exports = {
         return db.query(`SELECT * FROM t_blog`);
     },
     getBlogById(blogId){
+        // 数据库发生了改变 sql语句要变
         return db.query(`
         SELECT blog.*, comm.comm_id, comm.content as comm_content, comm.post_time as comm_post_time, usr.username
         FROM t_blog blog  LEFT JOIN t_comment comm 

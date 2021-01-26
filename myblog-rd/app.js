@@ -5,9 +5,7 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
-
 const blog = require('./routes/blog')
-const users = require('./routes/users')
 // 解决跨域第二种方式 CORS
 var cors = require('koa-cors');
 // error handler
@@ -34,7 +32,7 @@ app.use(async (ctx, next) => {
 })
 // routes
 app.use(blog.routes(), blog.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
+
 // error-handling
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)

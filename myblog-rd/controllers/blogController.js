@@ -11,7 +11,6 @@ module.exports = {
         for(let i = 0;i < results.length;i++){
           results[i].post_time = date.formatTime('yyyy-MM-dd hh:mm:ss',results[i].post_time)
         }
-        
         ctx.body = {
           state: 'success',
           results
@@ -21,6 +20,8 @@ module.exports = {
       async getBlogDetail(ctx) {
         let { blogId } = ctx.query;
         let results = await blogModel.getBlogById(blogId);
+        console.log("查询之后的结果");
+        console.log(results);
         if (results.length > 0) {
           let { blog_id, title, content, post_time } = results[0];
           post_time = date.formatTime('yyyy-MM-dd hh:mm:ss',post_time)
@@ -52,9 +53,9 @@ module.exports = {
 
       async pushArticle(ctx){
          // 接收表单数据
-         let { title, content, user_id } = ctx.request.body;
+         let { title, content, description } = ctx.request.body;
         //  // 连接数据库
-         let results = await model.saveBlog({ title, content, user_id });
+         let results = await model.saveBlog({ title, content, description});
          console.log(results);
         //  // 4. 根据查询的结果跳转(或输出)不同的结果页面
          if (results.insertId) {
@@ -66,7 +67,7 @@ module.exports = {
              ctx.body = "fail"
            }
       },
-
+      
       async pushComment(ctx){
         let { content,blog_id,user_id  } = ctx.request.body;
         let results = await model.saveComment({ content, blog_id, user_id });
@@ -77,7 +78,6 @@ module.exports = {
           ctx.body = "fail"
         }
       }
-
 }
 
 

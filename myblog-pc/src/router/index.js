@@ -12,6 +12,8 @@ import PushArticle from '../views/PushArticle.vue'
 import About from '../views/About.vue'
 // 留言
 import Message from '../views/Message.vue'
+// 引入404页面
+import error from '../views/error.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -43,6 +45,11 @@ const routes = [
     path: '/Message',
     name: 'Message',
     component: Message
+  },
+  {
+    path: '/error',
+    name: 'error',
+    component: error
   },
 ]
 const router = new VueRouter({
