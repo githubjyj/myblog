@@ -45,14 +45,17 @@
           <div class="comments_wenzi">
             <div data-v-67070f71="" class="i-publish">
 
+                <!-- 评论内容 -->
                 <div data-v-67070f71="" class="i-publish-content">
                   <textarea data-v-67070f71="" required="required" v-model="comment"></textarea>
                 </div>
 
                 <div data-v-67070f71="" class="manager">
-                  <div data-v-67070f71="">
-                    <input data-v-67070f71="" maxlength="48" required="required" type="text" placeholder="* 请输入您的昵称" class="text" value=""/>
-                  </div>
+
+                  <!-- 评论人信息 -->
+                  <!-- <div data-v-67070f71="">
+                    <input data-v-67070f71="" maxlength="48" required="required" type="text" v-model="content_user" placeholder="* 请输入您的昵称" class="text" value=""/>
+                  </div> -->
 
                   <div data-v-67070f71="" class="sss">
                     <div data-v-67070f71="" class="ssb"></div>
@@ -95,7 +98,7 @@ export default {
   data() {
     return {
       blog: "",
-      comment: "",
+      comment: ""
     };
   },
   created() {
@@ -130,12 +133,9 @@ export default {
       this.$http
         .post("/blog/comment", {
           content: this.comment,
-          blog_id: this.$route.params.blogId,
-          user_id: localStorage.getItem("user_id"),
+          blog_id: this.$route.params.blogId
         })
         .then((res) => {
-          // console.log(res);
-          // 从服务器中或得blog数据和state状态
           if (res.data == "success") {
             this.getBlogDetail();
           }

@@ -4,12 +4,16 @@
       <div>
         <div class="comments_wenzi">
           <div data-v-67070f71="" class="i-publish">
-            <form data-v-67070f71="">
+              <p>* 你对我的博客有什么想法吗？请写在下面吧</p>
+              <!-- 文章内容 -->
               <div data-v-67070f71="" class="i-publish-content">
-                <textarea data-v-67070f71="" required="required"></textarea>
+                <textarea data-v-67070f71="" required="required" v-model="content"></textarea>
               </div>
+
               <div data-v-67070f71="" class="manager">
                 <div data-v-67070f71="">
+                  <p>* 留下姓名和邮箱方便作者找到你，哈哈哈</p>
+                  <!-- 用户名 -->
                   <input
                     data-v-67070f71=""
                     maxlength="48"
@@ -18,8 +22,10 @@
                     placeholder="* 请输入您的昵称"
                     class="text"
                     value=""
+                    v-model="name"
                   />
 
+                  <!-- 用户邮箱 -->
                   <input
                     data-v-67070f71=""
                     maxlength="28"
@@ -28,18 +34,18 @@
                     placeholder="* 请输入您的邮箱"
                     class="text"
                     value=""
+                    v-model="email"
                   />
-                </div>
 
+                </div>
                 <div data-v-67070f71="" class="sss">
                   <div data-v-67070f71="" class="ssb"></div>
-                  <button data-v-731308b2="" data-v-67070f71="" class="i-btn">
+
+                  <button data-v-731308b2="" data-v-67070f71="" class="i-btn" @click="pushComment">
                     <span data-v-731308b2="">提交评论</span>
                   </button>
-                  
                 </div>
               </div>
-            </form>
           </div>
         </div>
       </div>
@@ -48,7 +54,34 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data () {
+    return {
+      name:"",
+      email:"",
+      content:""
+    }
+  },
+  methods: {
+    pushComment(){
+            this.$http
+            .post("/blog/blogComment", {
+                // 给服务器传过去的参数
+                name: this.name,
+                email:this.email,
+                content: this.content,
+            })
+
+            .then((res) => {
+                let {data} = res;
+                console.log(data);
+                if (data == "success") {
+                  alert("你的评论将会被作者看到，及时回复你")
+                }
+            });
+    }
+  }
+};
 </script>
 
 <style scoped>

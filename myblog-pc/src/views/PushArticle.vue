@@ -54,6 +54,7 @@ export default {
                 console.log(status);
                 if (status == "success") {
                         // 发表成功
+                        alert("文章发表成功")
                         this.$router.push('/');
                     }
             });

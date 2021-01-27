@@ -20,7 +20,6 @@ module.exports = {
       async getBlogDetail(ctx) {
         let { blogId } = ctx.query;
         let results = await blogModel.getBlogById(blogId);
-        console.log("查询之后的结果");
         console.log(results);
         if (results.length > 0) {
           let { blog_id, title, content, post_time } = results[0];
@@ -41,7 +40,6 @@ module.exports = {
               username: obj.username
             });
           }
-          console.log(blogInfo);
           ctx.body = {
             blog: blogInfo,
             state:"success"
@@ -69,15 +67,28 @@ module.exports = {
       },
       
       async pushComment(ctx){
-        let { content,blog_id,user_id  } = ctx.request.body;
-        let results = await model.saveComment({ content, blog_id, user_id });
+        let { content,blog_id } = ctx.request.body;
+        let results = await model.saveComment({ content, blog_id });
+        console.log("下面是保存评论的返回内容");
         console.log(results);
         if(results.insertId){
           ctx.body = "success"
         }else{
           ctx.body = "fail"
         }
-      }
+      },
+
+      async pushBlogComment(ctx){
+        let { name,email,content } = ctx.request.body;
+        let results = await model.saveBlogComment({ name, email,content });
+        console.log(results);
+        if(results){
+          ctx.body = "success"
+        }else{
+          ctx.body = "fail"
+        }
+      } 
+
 }
 
 
