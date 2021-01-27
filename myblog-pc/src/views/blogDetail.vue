@@ -72,18 +72,15 @@
             <div class="list">
               <h3 class="title">评论</h3>
               <div class="nocomments">
+
                 <!-- 评论 -->
-                <div
-                  class="comment"
-                  v-for="item in blog.comments"
-                  :key="item.comm_id"
-                >
+                <div class="comment" v-for="item in blog.comments" :key="item.comm_id">
                   <div class="comment-content">{{ item.comm_content }}</div>
                   <div class="comment-info">
-                    <span class="userinfo">{{ item.username }}</span>
                     <span class="post-time">{{ item.comm_post_time }}</span>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -259,7 +256,10 @@ export default {
     display: block;
   }
 }
-
+.comment{
+  border:1px double black;
+  margin-top:1em;
+}
 .comments_wenzi {
   margin-top: 30px;
 }
