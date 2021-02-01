@@ -39,6 +39,12 @@ export default {
         content: ""
         };
     },
+    created () {
+        // 判断vuex中是否有值
+        if(!this.$store.state.user_id || !this.$store.state.user_num){
+            this.$router.push("/login")
+        }   
+    },
    methods:{
         push(){
              this.$http

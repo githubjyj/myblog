@@ -1,11 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 import Index from '../views/index.vue'
-
 // 创建 blogDetail.vue 的路由
 import BlogDetail from '../views/blogDetail.vue'
-
 // 发表文章
 import PushArticle from '../views/PushArticle.vue'
 // 关于作者
@@ -14,6 +11,8 @@ import About from '../views/About.vue'
 import Message from '../views/Message.vue'
 // 引入404页面
 import error from '../views/error.vue'
+// 引入登录页面
+import login from '../views/login.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -30,7 +29,11 @@ const routes = [
     name: 'BlogDetail',
     component: BlogDetail
   },
-
+  {
+    path: '/login',
+    name: 'login',
+    component: login
+  },
   {
     path: '/PushArticle',
     name: 'PushArticle',
@@ -46,15 +49,28 @@ const routes = [
     name: 'Message',
     component: Message
   },
+  
   {
     path: '/error',
     name: 'error',
     component: error
   },
+  {
+    path:"*",
+    name: 'error',
+    component: error
+  }
 ]
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
+
 export default router
+
+
+
+
+
+

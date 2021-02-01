@@ -87,8 +87,18 @@ module.exports = {
         }else{
           ctx.body = "fail"
         }
+      },
+      login(ctx){
+        let { loginNum,password } = ctx.request.body
+        if(loginNum == "lisi" && password == "123456"){
+            ctx.body = {
+              state:"success",
+              value:ctx.request.body
+            }
+        }else{
+          ctx.body = "fail"
+        }
       } 
-
 }
 
 

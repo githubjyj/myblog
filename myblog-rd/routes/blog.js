@@ -11,4 +11,7 @@ router.post('/push',controller.pushArticle)
 router.post('/comment',controller.pushComment)
 
 router.post('/blogComment',controller.pushBlogComment)
+
+router.post('/login',controller.login)
+
 module.exports = router

@@ -74,7 +74,9 @@
               <div class="nocomments">
 
                 <!-- 评论 -->
-                <div class="comment" v-for="item in blog.comments" :key="item.comm_id">
+                <div class="comment" v-for="(item,index) in blog.comments" :key="item.comm_id">
+                  
+                  <p v-if="blog.comments[0].comm_id">{{index+1}}楼</p>
                   <div class="comment-content">{{ item.comm_content }}</div>
                   <div class="comment-info">
                     <span class="post-time">{{ item.comm_post_time }}</span>
