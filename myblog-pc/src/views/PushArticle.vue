@@ -7,7 +7,7 @@
                     <p class="title">
                         标题：<input type="text" name="title" id="title" v-model="title" >
                     </p>
-
+                    
                     <br>
 
                     <p class="description">

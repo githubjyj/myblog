@@ -1,31 +1,4 @@
 <template>
-  <!-- <div class="container">
-    <div class="content">
-    <div class="blog">
-      <div class="blog-title">
-        <h3>{{blog.title}}</h3>
-        <span>{{blog.post_time}}</span>
-      </div>
-
-      <div class="blog-content">{{blog.content}}</div>
-      <div class="comments">
-      </div>
-    </div>
-
-      <textarea  cols="30" rows="5" v-model="comment"></textarea>
-    <button @click="pushcomment">提交评论</button>
-
-    <h4>评论</h4>
-        <div class="comment" v-for="item in blog.comments" :key="item.comm_id">
-          <div class="comment-content">{{item.comm_content}}</div>
-          <div class="comment-info">
-            <span class="userinfo">{{item.username}}</span>
-            <span class="post-time">{{item.comm_post_time}}</span>
-          </div>
-        </div>
-    </div>
-  </div> -->
-
   <div class="container">
     <div class="content">
       <div class="main detail" id="app">
@@ -33,7 +6,6 @@
         <h1>{{ blog.title }}</h1>
         <!-- 发布时间 -->
         <div class="date">发布于 {{ blog.post_time }}</div>
-
         <!-- 文章详情 -->
         <article>
           <div class="lead">
@@ -43,31 +15,23 @@
 
         <div>
           <div class="comments_wenzi">
-            <div data-v-67070f71="" class="i-publish">
+            <div class="i-publish">
 
                 <!-- 评论内容 -->
-                <div data-v-67070f71="" class="i-publish-content">
-                  <textarea data-v-67070f71="" required="required" v-model="comment"></textarea>
+                <div class="i-publish-content">
+                  <textarea required="required" v-model="comment"></textarea>
                 </div>
 
-                <div data-v-67070f71="" class="manager">
+                <div class="manager">
 
-                  <!-- 评论人信息 -->
-                  <!-- <div data-v-67070f71="">
-                    <input data-v-67070f71="" maxlength="48" required="required" type="text" v-model="content_user" placeholder="* 请输入您的昵称" class="text" value=""/>
-                  </div> -->
-
-                  <div data-v-67070f71="" class="sss">
-                    <div data-v-67070f71="" class="ssb"></div>
-                    <button data-v-731308b2="" data-v-67070f71="" class="i-btn" @click="pushcomment">
-                      <span data-v-731308b2="">提交评论</span>
+                  <div class="sss">
+                    <div class="ssb"></div>
+                    <button class="i-btn" @click="pushcomment">
+                      <span>提交评论</span>
                     </button>
                   </div>
-
                 </div>
-           
             </div>
-
             <!-- 评论 -->
             <div class="list">
               <h3 class="title">评论</h3>
@@ -75,14 +39,12 @@
 
                 <!-- 评论 -->
                 <div class="comment" v-for="(item,index) in blog.comments" :key="item.comm_id">
-                  
                   <p v-if="blog.comments[0].comm_id">{{index+1}}楼</p>
                   <div class="comment-content">{{ item.comm_content }}</div>
                   <div class="comment-info">
                     <span class="post-time">{{ item.comm_post_time }}</span>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -146,7 +108,7 @@ export default {
 
 
 <style scoped>
-.i-btn[data-v-731308b2] {
+.i-btn{
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
@@ -174,27 +136,27 @@ export default {
   background: #ecf5ff;
   border-color: #b3d8ff;
 }
-.i-btn[data-v-731308b2]:hover {
+.i-btn:hover {
   background: #409eff;
   border-color: #409eff;
   color: #fff;
 }
-.submit_disabled[data-v-731308b2] {
+.submit_disabled{
   cursor: not-allowed;
 }
-.submit_disabled[data-v-731308b2],
-.submit_disabled[data-v-731308b2]:hover {
+.submit_disabled,
+.submit_disabled:hover {
   color: #8cc5ff;
   background-color: #ecf5ff;
   border-color: #d9ecff;
 }
 
-.i-publish .i-publish-content[data-v-67070f71] {
+.i-publish .i-publish-content{
   padding: 10px 4px;
   border: 1px solid #9c9c9c;
   margin-bottom: 4px;
 }
-.i-publish .i-publish-content textarea[data-v-67070f71] {
+.i-publish .i-publish-content textarea{
   min-height: 120px;
   width: 100%;
   resize: none;
@@ -202,23 +164,23 @@ export default {
   font-size: 14px;
   outline: none;
 }
-.i-publish .submitTip[data-v-67070f71] {
+.i-publish .submitTip{
   margin-right: 12px;
   color: #666;
   font-size: 13px;
 }
-.i-publish .ss[data-v-67070f71] {
+.i-publish .ss{
   margin-top: 6px;
   text-align: right;
 }
-.i-publish .ss span[data-v-67070f71] {
+.i-publish .ss span {
   color: #666;
   margin-right: 10px;
 }
-.i-publish .ss span em[data-v-67070f71] {
+.i-publish .ss span em {
   color: red;
 }
-.i-publish .manager[data-v-67070f71] {
+.i-publish .manager {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -230,21 +192,21 @@ export default {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-.i-publish .manager .text[data-v-67070f71] {
+.i-publish .manager .text {
   padding: 10px 2px;
   font-size: 14px;
   margin-right: 6px;
 }
-.i-publish .manager .captcha[data-v-67070f71] {
+.i-publish .manager .captcha{
   width: 100px;
 }
-.i-publish .manager .sss[data-v-67070f71] {
+.i-publish .manager .sss {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
-.i-publish .manager .sss .ssb[data-v-67070f71],
-.i-publish .manager .sss[data-v-67070f71] {
+.i-publish .manager .sss .ssb,
+.i-publish .manager .sss{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -253,8 +215,8 @@ export default {
   align-items: center;
 }
 @media screen and (max-width: 530px) {
-  .i-publish .manager .sss[data-v-67070f71],
-  .i-publish .manager[data-v-67070f71] {
+  .i-publish .manager .sss,
+  .i-publish .manager{
     display: block;
   }
 }

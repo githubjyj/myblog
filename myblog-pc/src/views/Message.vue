@@ -3,19 +3,18 @@
     <div class="content">
       <div>
         <div class="comments_wenzi">
-          <div data-v-67070f71="" class="i-publish">
+          <div class="i-publish">
               <p>* 你对我的博客有什么想法吗？请写在下面吧</p>
               <!-- 文章内容 -->
-              <div data-v-67070f71="" class="i-publish-content">
-                <textarea data-v-67070f71="" required="required" v-model="content"></textarea>
+              <div class="i-publish-content">
+                <textarea required="required" v-model="content"></textarea>
               </div>
 
-              <div data-v-67070f71="" class="manager">
-                <div data-v-67070f71="">
+              <div class="manager">
+                <div>
                   <p>* 留下姓名和邮箱方便作者找到你，哈哈哈</p>
                   <!-- 用户名 -->
                   <input
-                    data-v-67070f71=""
                     maxlength="48"
                     required="required"
                     type="text"
@@ -27,7 +26,6 @@
 
                   <!-- 用户邮箱 -->
                   <input
-                    data-v-67070f71=""
                     maxlength="28"
                     required="required"
                     type="email"
@@ -38,11 +36,11 @@
                   />
 
                 </div>
-                <div data-v-67070f71="" class="sss">
-                  <div data-v-67070f71="" class="ssb"></div>
+                <div  class="sss">
+                  <div  class="ssb"></div>
 
-                  <button data-v-731308b2="" data-v-67070f71="" class="i-btn" @click="pushComment">
-                    <span data-v-731308b2="">提交评论</span>
+                  <button class="i-btn" @click="pushComment">
+                    <span>提交评论</span>
                   </button>
                 </div>
               </div>
@@ -85,7 +83,7 @@ export default {
 </script>
 
 <style scoped>
-.i-btn[data-v-731308b2] {
+.i-btn{
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
@@ -113,47 +111,20 @@ export default {
   background: #ecf5ff;
   border-color: #b3d8ff;
 }
-.i-btn[data-v-731308b2]:hover {
+
+.i-btn:hover {
   background: #409eff;
   border-color: #409eff;
   color: #fff;
 }
-.submit_disabled[data-v-731308b2] {
-  cursor: not-allowed;
-}
-.submit_disabled[data-v-731308b2],
-.submit_disabled[data-v-731308b2]:hover {
-  color: #8cc5ff;
-  background-color: #ecf5ff;
-  border-color: #d9ecff;
-}
-.emoji-content[data-v-8994ac90] {
-  width: 340px;
-  text-align: left;
-  -webkit-box-shadow: 0 0 8px #ccc;
-  box-shadow: 0 0 8px #ccc;
-  padding: 6px;
-  position: absolute;
-  top: 36px;
-  right: 104px;
-  left: auto;
-  z-index: 19;
-  background-color: #fff;
-}
-.emoji-content .con a[data-v-8994ac90] {
-  border: 1px solid transparent;
-  display: inline-block;
-}
-.emoji-content .con a[data-v-8994ac90]:hover {
-  -webkit-transform: scale(1.4);
-  transform: scale(1.4);
-}
-.i-publish .i-publish-content[data-v-67070f71] {
+
+
+.i-publish .i-publish-content{
   padding: 10px 4px;
   border: 1px solid #9c9c9c;
   margin-bottom: 4px;
 }
-.i-publish .i-publish-content textarea[data-v-67070f71] {
+.i-publish .i-publish-content textarea {
   min-height: 120px;
   width: 100%;
   resize: none;
@@ -162,23 +133,23 @@ export default {
   outline: none;
   box-sizing: content-box;
 }
-.i-publish .submitTip[data-v-67070f71] {
+.i-publish .submitTip {
   margin-right: 12px;
   color: #666;
   font-size: 13px;
 }
-.i-publish .ss[data-v-67070f71] {
+.i-publish .ss{
   margin-top: 6px;
   text-align: right;
 }
-.i-publish .ss span[data-v-67070f71] {
+.i-publish .ss span {
   color: #666;
   margin-right: 10px;
 }
-.i-publish .ss span em[data-v-67070f71] {
+.i-publish .ss span em {
   color: red;
 }
-.i-publish .manager[data-v-67070f71] {
+.i-publish .manager{
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -190,21 +161,21 @@ export default {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-.i-publish .manager .text[data-v-67070f71] {
+.i-publish .manager .text {
   padding: 10px 2px;
   font-size: 14px;
   margin-right: 6px;
 }
-.i-publish .manager .captcha[data-v-67070f71] {
+.i-publish .manager .captcha{
   width: 100px;
 }
-.i-publish .manager .sss[data-v-67070f71] {
+.i-publish .manager .sss {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
-.i-publish .manager .sss .ssb[data-v-67070f71],
-.i-publish .manager .sss[data-v-67070f71] {
+.i-publish .manager .sss .ssb,
+.i-publish .manager .sss{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,249 +184,12 @@ export default {
   align-items: center;
 }
 @media screen and (max-width: 530px) {
-  .i-publish .manager .sss[data-v-67070f71],
-  .i-publish .manager[data-v-67070f71] {
+  .i-publish .manager .sss,
+  .i-publish .manager{
     display: block;
   }
 }
-.l_post[data-v-4f8e9454] {
-  border-bottom: 1px dashed #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-.l_post[data-v-4f8e9454]:last-child {
-  border-bottom: none;
-}
-.tt[data-v-4f8e9454] {
-  font-size: 26px;
-  border-bottom: 2px solid #333;
-  padding-bottom: 6px;
-  margin-bottom: 26px;
-}
-.avatar[data-v-4f8e9454] {
-  float: left;
-}
-.avatar img[data-v-4f8e9454] {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-}
-.avatar p[data-v-4f8e9454] {
-  text-align: center;
-  margin-top: 6px;
-  font-size: 13px;
-  color: #666;
-}
-.avatarimg[data-v-4f8e9454] {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  margin-right: 6px;
-}
-.nickname[data-v-4f8e9454] {
-  color: #61b400;
-}
-.bozhu[data-v-4f8e9454] {
-  color: #f7420a;
-}
-.msg[data-v-4f8e9454] {
-  padding-left: 60px;
-}
-.msg .floor[data-v-4f8e9454] {
-  float: right;
-  color: #555;
-}
-.msg .time[data-v-4f8e9454] {
-  color: #555;
-  font-size: 15px;
-}
-.msg .createtime[data-v-4f8e9454] {
-  color: #888;
-  margin-left: 8px;
-  font-size: 14px;
-}
-.msg .con[data-v-4f8e9454] {
-  padding: 10px 0 20px;
-  word-break: break-all;
-}
-.msg .con p[data-v-4f8e9454] {
-  padding-bottom: 4px;
-  line-height: 26px;
-}
-.msg .con p code[data-v-4f8e9454] {
-  padding: 3px 4px;
-  color: #c7254e;
-  background-color: #f9f9fd;
-  margin: 0 2px;
-  font-family: consolas, courier new;
-  font-size: 96%;
-  word-wrap: break-word;
-  word-break: normal;
-}
-.msg .con pre[data-v-4f8e9454] {
-  display: block;
-  overflow: hidden;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-  -webkit-text-size-adjust: none;
-}
-.msg .con pre code[data-v-4f8e9454] {
-  overflow: auto;
-  max-height: 500px;
-}
-.reply[data-v-4f8e9454] {
-  background: #f9f9f9;
-  margin-top: 6px;
-  padding: 10px;
-  position: relative;
-}
-.reply .msg[data-v-4f8e9454] {
-  padding-left: 0;
-}
-.reply .msg .avatar[data-v-4f8e9454] {
-  margin-right: 4px;
-}
-.reply .msg .avatar img[data-v-4f8e9454] {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-}
-.reply .time[data-v-4f8e9454] {
-  font-size: 13px;
-}
-.reply .con[data-v-4f8e9454] {
-  padding: 0;
-  font-size: 14px;
-  color: #444;
-}
-.reply .con .reply_con[data-v-4f8e9454] {
-  padding: 6px 0;
-  word-break: break-all;
-}
-.reply .rpage[data-v-4f8e9454] {
-  text-align: right;
-}
-.reply .rpage a[data-v-4f8e9454] {
-  padding: 0 6px;
-}
-.reply .rpage .cur[data-v-4f8e9454] {
-  color: #888;
-  cursor: default;
-}
-.reply .toreply textarea[data-v-4f8e9454] {
-  width: 100%;
-  height: 60px;
-  resize: none;
-}
-.reply .toreply p[data-v-4f8e9454] {
-  text-align: right;
-}
-.reply .toreply p span[data-v-4f8e9454] {
-  color: #666;
-}
-.reply .toreply p input[data-v-4f8e9454] {
-  padding: 2px 6px;
-}
-.wrapper[data-v-223af056] {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 9;
-}
-.wrapper .dialog[data-v-223af056] {
-  position: relative;
-  margin: 0 auto 50px;
-  background: #fff;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 580px;
-  max-width: 98%;
-  padding: 20px;
-  margin-top: 15vh;
-}
-.wrapper .dialog .close[data-v-223af056] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 27px;
-  line-height: 50px;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-}
-.wrapper .dialog .header[data-v-223af056] {
-  margin-bottom: 10px;
-}
-.wrapper .dialog .header .title span[data-v-223af056] {
-  color: #61b400;
-}
-.wrapper .dialog .header .reply-content[data-v-223af056] {
-  color: #888;
-  font-size: 14px;
-  margin-top: 6px;
-}
-.wrapper .dialog .body textarea[data-v-223af056] {
-  width: 100%;
-  height: 160px;
-  resize: none;
-}
-.wrapper .dialog .footer[data-v-223af056] {
-  text-align: right;
-  margin-top: 8px;
-}
-.wrapper .dialog .footer .cancel[data-v-223af056] {
-  margin-right: 26px;
-}
-.comments_wenzi {
-  margin-top: 30px;
-}
-.comments_wenzi .clearfix:after {
-  content: "\A0";
-  display: block;
-  visibility: hidden;
-  width: 0;
-  height: 0;
-  clear: both;
-  font-size: 0;
-  line-height: 0;
-  overflow: hidden;
-}
-.comments_wenzi .clearfix {
-  zoom: 1;
-}
-.list .title {
-  margin: 10px 0;
-}
-.toast[data-v-228146a4] {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  border-radius: 5px;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
-  margin-top: -100px;
-  color: #fff;
-  z-index: 19;
-}
-.fadein[data-v-228146a4] {
-  -webkit-animation: animate_in-data-v-228146a4 0.25s;
-  animation: animate_in-data-v-228146a4 0.25s;
-}
-.fadeout[data-v-228146a4] {
-  -webkit-animation: animate_out-data-v-228146a4 0.25s;
-  animation: animate_out-data-v-228146a4 0.25s;
-  opacity: 0;
-}
+
 @-webkit-keyframes animate_in-data-v-228146a4 {
   0% {
     opacity: 0;
